@@ -17,6 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Grupo Saúde Vale Jurumirim</title>
+
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
