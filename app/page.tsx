@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button, Badge, Row, Col, Typography, Space, Menu, Layout, Divider, Carousel } from "antd"
 import { Separator } from "@/components/ui/separator";
+import { useMediaQuery } from 'react-responsive';
 import {
   Heart,
   Users,
@@ -307,7 +308,7 @@ export default function PortfolioPage() {
       cep: "CEP 18730-027",
       tipo: "Unidade Principal",
       exames: ['Tomografia', 'Eletrocardiograma', 'Eletrocefalograma', 'Mapa', 'Holter', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional', 'Doppler', 'Morfológico', 'Transvaginal', 'Mamografia Digital', 'Ressonância Magnética', 'Densitometria Óssea', 'Raio-X Digital'],
-      examesImg: [{ img: raiox, text: 'Raio-X' }, { img: eletrocardiogra, text: 'Raio-X' }, { img:ecocardiograma , text: 'Raio-X' }, { img: ultrasonografia, text: 'Ultrasonografia' }, { img: mamografia, text: 'Mamografia' }, { img:reconaciaMag , text: 'Raio-X' }]
+      examesImg: [{ img: raiox, text: 'Raio-X' }, { img: eletrocardiogra, text: 'Raio-X' }, { img: ecocardiograma, text: 'Raio-X' }, { img: ultrasonografia, text: 'Ultrasonografia' }, { img: mamografia, text: 'Mamografia' }, { img: reconaciaMag, text: 'Raio-X' }]
     },
     {
       nome: "Santa Casa de Misericórdia de Avaré",
@@ -315,7 +316,7 @@ export default function PortfolioPage() {
       cep: "",
       tipo: "Parceria Hospitalar",
       exames: ['Raio-X', 'Audiometria', 'Acuidade Visual', 'Exames Laboratorias', 'Consultas Medicas', 'Tomografia', 'Eletrocardiograma', 'Eletrocefalograma', 'Mapa', 'Holter', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional', 'Doppler', 'Morfológico', 'Transvaginal', 'Mamografia Digital', 'Ressonância Magnética', 'Densitometria Óssea', 'Raio-X Digital'],
-      examesImg: [{ img: eletrocardiogra, text: 'Raio-X' }, { img: raiox, text: 'Raio-X' }, { img: ultrasonografia, text: 'Ultrasonografia' }, { img: mamografia, text: 'Mamografia' }, { img:espirometria , text: 'Raio-X' }, { img:ex_mapa , text: 'Raio-X' }, { img:imitanciometria , text: 'Raio-X' }] 
+      examesImg: [{ img: eletrocardiogra, text: 'Raio-X' }, { img: raiox, text: 'Raio-X' }, { img: ultrasonografia, text: 'Ultrasonografia' }, { img: mamografia, text: 'Mamografia' }, { img: espirometria, text: 'Raio-X' }, { img: ex_mapa, text: 'Raio-X' }, { img: imitanciometria, text: 'Raio-X' }]
     },
     {
       nome: "Santa Casa de Misericórdia de Taquarituba",
@@ -323,7 +324,7 @@ export default function PortfolioPage() {
       cep: "",
       tipo: "Parceria Hospitalar",
       exames: ['Densitometria óssea', 'Eletrocardiograma', 'Eletrocefalograma', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional'],
-      examesImg: [{ img:ecocardiograma , text: 'Raio-X' }, { img: raiox, text: 'Raio-X' }, { img: colonoscopia, text: 'Ultrasonografia' }, { img:ex_mapa , text: 'Raio-X' }, { img: mamografia, text: 'Mamografia' }, { img:holter , text: 'Raio-X' }, { img:ultrasonografia , text: 'Raio-X' }]
+      examesImg: [{ img: ecocardiograma, text: 'Raio-X' }, { img: raiox, text: 'Raio-X' }, { img: colonoscopia, text: 'Ultrasonografia' }, { img: ex_mapa, text: 'Raio-X' }, { img: mamografia, text: 'Mamografia' }, { img: holter, text: 'Raio-X' }, { img: ultrasonografia, text: 'Raio-X' }]
     },
   ];
 
@@ -360,6 +361,9 @@ export default function PortfolioPage() {
     background: '#364d79',
   };
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -376,42 +380,55 @@ export default function PortfolioPage() {
           <NavigationMenu.Root>
             <NavigationMenu.List className="hidden md:flex gap-6">
               <NavigationMenu.Item>
-                <NavigationMenu.Link className="text-gray-700 hover:text-black transition" href="#contato">
-                  <div>
-                    <div>
-                      <a href="https://entregadeexames.com.br/" target="_blank">
-                        <Button className="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2" >    
-                          Solicitar Resultados
-                        </Button>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="block md:hidden">
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button className="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2">
-                          <Phone className="h-4 w-4 mr-2" />
-                          Contato
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContentContect />
-                    </Dialog>
-                  </div>
-                  <div className="hidden md:block">
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button className="bg-blue-900 hover:bg-blue-700 text-white rounded-full px-4 py-2">
-                          <Phone className="h-4 w-4 mr-2" />
-                          Contato
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContentContect />
-                    </Dialog>
-                  </div>
-                </NavigationMenu.Link>
+
               </NavigationMenu.Item>
             </NavigationMenu.List>
+
+            {/* Desktop: botões lado a lado */}
+            <div className="hidden md:flex gap-4">
+              <div>
+                <div>
+                  <a href="https://entregadeexames.com.br/" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-blue-900 hover:bg-blue-700 text-white rounded-full px-4 py-2">
+                      Solicitar Resultado
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="bg-blue-900 hover:bg-blue-700 text-white rounded-full px-4 py-2">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Contato
+                  </Button>
+                </DialogTrigger>
+                <DialogContentContect />
+              </Dialog>
+            </div>
+
+            {/* Mobile: botões um em cima do outro */}
+            <div className="flex flex-col gap-4 md:hidden">
+              <div>
+                <div >
+                  <a href="https://entregadeexames.com.br/" target="_blank" rel="noopener noreferrer">
+                    <Button className="fixed bottom-20 right-4 bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2">
+                      Solicitar Resultado
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Contato
+                  </Button>
+                </DialogTrigger>
+                <DialogContentContect />
+              </Dialog>
+            </div>
           </NavigationMenu.Root>
+
         </div>
       </header>
 
@@ -428,12 +445,23 @@ export default function PortfolioPage() {
             <p className="font-inter text-white">
               Atendimento humanizado com tecnologia para<br /> sua saúde e bem-estar
             </p>
+            {!isMobile && (
+              <Image
+                src={MedicImage}
+                alt="Imagem médica"
+                className="absolute top-0 right-0 h-80 object-contain z-20"
+              />
+            )}
           </div>
-          <Image
-            src={MedicImage}
-            alt="Imagem médica"
-            className="absolute top-0 right-0 h-80 object-contain z-20"
-          />
+          {isMobile && (
+            <div className="flex justify-center mt-4">
+              <Image
+                src={MedicImage}
+                alt="Imagem médica"
+                className="h-48 object-contain"
+              />
+            </div>
+          )}
         </section>
         <div className="container mx-auto">
 
@@ -974,12 +1002,12 @@ export default function PortfolioPage() {
 
 
                 <div className="p-6 bg-gray-50 rounded-b-lg">
-                  <ul className="grid grid-cols-3 gap-4">
+                  <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {unidade.exames.map((exame, idx) => (
                       <li key={idx} className="flex items-start space-x-3 mb-2 text-blue-800">
                         {exame}
                       </li>
-                        ))}
+                    ))}
                   </ul>
                 </div>
 

@@ -4,9 +4,9 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Grupo Saúde Vale Jurumirim',
+  description: 'Grupo Saúde Vale Jurumirim',
+  generator: 'Grupo Saúde Vale Jurumirim',
 }
 
 export default function RootLayout({
@@ -17,8 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Grupo Saúde Vale Jurumirim</title>
-
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
