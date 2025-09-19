@@ -76,6 +76,7 @@ import Logo from "../pictures/Grupo_Saude_Vale_Jurumirim.png"
 import MedicImage from "../pictures/APRESENTAÇÃO.jpg"
 import DialogContentContect from "@/components/DialogContentContect";
 import { id } from "date-fns/locale";
+import imgCuidadoResp from "../pictures/CUIDADO-E-RESPEITO-COM-CADA-PACIENTE.jpg"
 
 export default function PortfolioPage() {
   const especialidades = [
@@ -388,7 +389,12 @@ export default function PortfolioPage() {
             <div className="hidden md:flex gap-4">
               <div>
                 <div>
-                  <a href="https://entregadeexames.com.br/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://entregadeexames.com.br/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="focus:outline-none focus:ring-0 focus-visible:outline-none "
+                  >
                     <Button className="bg-blue-900 hover:bg-blue-700 text-white rounded-full px-4 py-2">
                       Solicitar Resultado
                     </Button>
@@ -410,8 +416,14 @@ export default function PortfolioPage() {
             <div className="flex flex-col gap-4 md:hidden">
               <div>
                 <div >
-                  <a href="https://entregadeexames.com.br/" target="_blank" rel="noopener noreferrer">
-                    <Button className="fixed bottom-20 right-4 bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2">
+                  <a
+                    href="https://entregadeexames.com.br/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="focus:outline-none focus:ring-0 focus-visible:outline-none"
+                  >
+                    <Button className="fixed bottom-20 right-4 bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2 z-20
+               focus:outline-none focus:ring-0 focus-visible:ring-0">
                       Solicitar Resultado
                     </Button>
                   </a>
@@ -419,7 +431,7 @@ export default function PortfolioPage() {
               </div>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2">
+                  <Button className="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2  z-20">
                     <Phone className="h-4 w-4 mr-2" />
                     Contato
                   </Button>
@@ -462,10 +474,10 @@ export default function PortfolioPage() {
           {isMobile && (
             <div className="flex justify-center mt-4">
               <Image
-                src={MedicImage}              
+                src={MedicImage}
                 alt="Imagem médica"
                 className="h-48 object-contain"
-              />                                                                                                  
+              />
             </div>
           )}
         </section>
@@ -554,65 +566,15 @@ export default function PortfolioPage() {
             </div>
           </section>
           {/* Transformação Digital */}
-          <section className="py-16 px-6 bg-green-50">
-            <div className="container mx-auto">
-              <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                Transformação Digital de Arquivos Físicos
-              </h3>
-              <div className="max-w-5xl mx-auto">
-                <Card className="mb-8">
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-2xl text-green-900">
-                      <FileText className="h-8 w-8 text-green-600 mr-3" />
-                      Digitalização no Âmbito Hospitalar
-                    </CardTitle>
-                    <CardDescription>
-                      Soluções completas para modernização da gestão, redução de
-                      espaço físico e cumprimento das exigências legais de
-                      guarda documental.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700 mb-6 text-justify">
-                      Com equipamentos de alta performance e protocolos técnicos
-                      seguros, realizamos a conversão de prontuários, laudos,
-                      fichas clínicas e documentos administrativos para o
-                      formato digital, com organização, catalogação e acesso
-                      facilitado.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <h4 className="text-xl font-semibold text-gray-900 mb-6">
-                  Serviços Incluídos:
-                </h4>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {servicosDigitalizacao.map((servico, index) => (
-                    <Card key={index} className="border-l-4 border-l-green-500">
-                      <CardContent className="p-4">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-gray-700">{servico}</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-
-                <Card className="mt-8 bg-gradient-to-r from-green-600 to-blue-600 text-white">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <Cloud className="h-12 w-12 flex-shrink-0" />
-                      <p className="text-lg font-medium">
-                        Com essa solução, sua instituição ganha agilidade no
-                        acesso à informação, melhora a segurança da guarda
-                        documental e promove a sustentabilidade na saúde.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+          <section className="max-w-5xl mx-auto bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white flex flex-col items-center">
+            <p className="text-lg font-medium">
+              Nossa Equipe está preparada para acolher sua necessidade com eficiência, empatia e segurança
+            </p>
+            <Image
+              src={imgCuidadoResp}
+              alt={""}
+              className={isMobile ? "mt-6 rounded-lg object-cover mx-auto max-h-96" : "mt-6 rounded-lg object-cover mx-auto max-w-md h-auto"}
+            />
           </section>
           {/*  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="hover:shadow-xl transition-all duration-300 border-l-4 border-l-red-600 group">
@@ -1319,8 +1281,8 @@ export default function PortfolioPage() {
       </section> */}
 
       {/* Agendamentos e Contato */}
-      <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-green-600 text-white">
-        <div className="container mx-auto text-center">
+      {/* <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-green-600 text-white">
+        <div className="container mx-auto text-center"> */}
           {/* <h3 className="text-3xl font-bold mb-6">Agendamentos e Contato</h3>
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto text-justify">
             Os agendamentos podem ser realizados diretamente nas unidades de
@@ -1373,12 +1335,12 @@ export default function PortfolioPage() {
             </Card>
           </div> */}
 
-          <p className="text-lg mb-8 text-blue-100">
+          {/* <p className="text-lg mb-8 text-blue-100">
             Nossa equipe está preparada para acolher sua necessidade com
             eficiência, empatia e segurança.
           </p>
-        </div>
-      </section>
+        </div> */}
+      {/* </section> */}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-6">
