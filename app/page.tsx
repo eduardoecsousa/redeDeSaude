@@ -73,7 +73,7 @@ import {
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import Image from "next/image";
 import Logo from "../pictures/Grupo_Saude_Vale_Jurumirim.png"
-import MedicImage from "../pictures/medicos.png"
+import MedicImage from "../pictures/APRESENTAÇÃO.jpg"
 import DialogContentContect from "@/components/DialogContentContect";
 import { id } from "date-fns/locale";
 
@@ -437,7 +437,39 @@ export default function PortfolioPage() {
 
       {/* Áreas de Atuação */}
       <section className="px-6 bg-white">
-        <section className="bg-gradient-to-b from-blue-900 to-teal-400 text-white w-screen relative left-1/2 right-1/2 -mx-[50vw]" style={{ minHeight: 270 }}>
+
+        <section className="bg-gradient-to-b from-blue-900 to-teal-400 text-white w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col md:flex-row items-center justify-between px-8 py-10" style={{ minHeight: 270 }}>
+          {/* Texto */}
+          <div className="max-w-lg md:w-1/2">
+            <h2 className="text-3xl font-bold text-white font-inter mb-4">
+              Cuidando da sua saúde<br /> com excelência e <br />proximidade
+            </h2>
+            <p className="font-inter text-white">
+              Atendimento humanizado com tecnologia para<br /> sua saúde e bem-estar
+            </p>
+          </div>
+
+          {/* Imagem */}
+          <div className="mt-6 md:mt-0 md:w-1/2 flex justify-center">
+            {!isMobile && (
+              <Image
+                src={MedicImage}
+                alt="Imagem médica"
+                className="relative top-0 right-0 h-80 object-contain z-20"
+              />
+            )}
+          </div>
+          {isMobile && (
+            <div className="flex justify-center mt-4">
+              <Image
+                src={MedicImage}              
+                alt="Imagem médica"
+                className="h-48 object-contain"
+              />                                                                                                  
+            </div>
+          )}
+        </section>
+        {/* <section className="bg-gradient-to-b from-blue-900 to-teal-400 text-white w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col" style={{ minHeight: 270 }}>
           <div className="container mx-auto px-4 max-w-2xl">
             <h2 className="text-3xl font-bold text-white font-inter mb-4 py-5">
               Cuidando da sua saúde<br /> com excelência e <br />proximidade
@@ -449,20 +481,20 @@ export default function PortfolioPage() {
               <Image
                 src={MedicImage}
                 alt="Imagem médica"
-                className="absolute top-0 right-0 h-80 object-contain z-20"
+                className="relative top-0 right-0 h-80 object-contain z-20"
               />
             )}
           </div>
           {isMobile && (
             <div className="flex justify-center mt-4">
               <Image
-                src={MedicImage}
+                src={MedicImage}              
                 alt="Imagem médica"
                 className="h-48 object-contain"
-              />
+              />                                                                                                  
             </div>
           )}
-        </section>
+        </section> */}
         <div className="container mx-auto">
 
           {/* Implantação de Serviços */}
