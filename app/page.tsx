@@ -308,16 +308,17 @@ export default function PortfolioPage() {
       endereco: "Rua Salvador de Freitas, 1316, Térreo - Centro, Itaí/SP",
       cep: "CEP 18730-027",
       tipo: "Unidade Principal",
-      exames: ['Tomografia', 'Eletrocardiograma', 'Eletrocefalograma', 'Mapa', 'Holter', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional', 'Doppler', 'Morfológico', 'Transvaginal', 'Mamografia Digital', 'Ressonância Magnética', 'Densitometria Óssea', 'Raio-X Digital'],
-      examesImg: [{ img: raiox, text: 'Raio-X' }, { img: eletrocardiogra, text: 'Raio-X' }, { img: ecocardiograma, text: 'Raio-X' }, { img: ultrasonografia, text: 'Ultrasonografia' }, { img: mamografia, text: 'Mamografia' }, { img: reconaciaMag, text: 'Raio-X' }]
+      exames: ['Tomografia Computadorizada 16 Canais', 'Eletrocardiograma', 'Eletroencefalograma', 'Mapa', 'Holter', 'Espirometria', 'Ultrassom Convencional', 'Doppler', 'Morfológico', 'Transvaginal', 'Mamografia Digital', 'Densitometria Óssea', 'Raio-X Digital', 'Audiometria', 'Acuidade Visual', 'Exames Complementares de Medicina do Trabalho', 'Exames Laboratorias'],
+      examesImg: [{ img: eletrocardiogra, text: 'Raio-X' }, { img: ultrasonografia, text: 'Ultrasonografia' }],
+      parceria: { nome: "Santa Casa de Misericórdia de Itaí", exames: ['Colonoscopia', 'Endoscopia'] }
     },
     {
       nome: "Santa Casa de Misericórdia de Avaré",
       endereco: "Rua Mato Grosso, anexo à Santa Casa - Centro, Avaré/SP",
       cep: "",
       tipo: "Parceria Hospitalar",
-      exames: ['Raio-X', 'Audiometria', 'Acuidade Visual', 'Exames Laboratorias', 'Consultas Medicas', 'Tomografia', 'Eletrocardiograma', 'Eletrocefalograma', 'Mapa', 'Holter', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional', 'Doppler', 'Morfológico', 'Transvaginal', 'Mamografia Digital', 'Ressonância Magnética', 'Densitometria Óssea', 'Raio-X Digital'],
-      examesImg: [{ img: eletrocardiogra, text: 'Raio-X' }, { img: raiox, text: 'Raio-X' }, { img: ultrasonografia, text: 'Ultrasonografia' }, { img: mamografia, text: 'Mamografia' }, { img: espirometria, text: 'Raio-X' }, { img: ex_mapa, text: 'Raio-X' }, { img: imitanciometria, text: 'Raio-X' }]
+      exames: ['Raio-X', 'Tomografia Computadorizada 64 Canais', 'Eletrocardiograma', 'Eletroencefalograma', 'Mapa', 'Holter', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional', 'Ultrassom Doppler', 'Ultrassom Morfológico', 'Ultrassom Transvaginal', 'Ressonância Magnética 1,5 tesla', 'Raio-X Digital'],
+      examesImg: [{ img: eletrocardiogra, text: 'Raio-X' }, { img: ultrasonografia, text: 'Ultrasonografia' }, { img: espirometria, text: 'Raio-X' }, { img: ex_mapa, text: 'Raio-X' }, { img: imitanciometria, text: 'Raio-X' }]
     },
     {
       nome: "Santa Casa de Misericórdia de Taquarituba",
@@ -325,7 +326,7 @@ export default function PortfolioPage() {
       cep: "",
       tipo: "Parceria Hospitalar",
       exames: ['Densitometria óssea', 'Eletrocardiograma', 'Eletrocefalograma', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional'],
-      examesImg: [{ img: ecocardiograma, text: 'Raio-X' }, { img: raiox, text: 'Raio-X' }, { img: colonoscopia, text: 'Ultrasonografia' }, { img: ex_mapa, text: 'Raio-X' }, { img: mamografia, text: 'Mamografia' }, { img: holter, text: 'Raio-X' }, { img: ultrasonografia, text: 'Raio-X' }]
+      examesImg: [{ img: ecocardiograma, text: 'Raio-X' }, { img: colonoscopia, text: 'Ultrasonografia' }, { img: ex_mapa, text: 'Raio-X' }, { img: holter, text: 'Raio-X' }]
     },
   ];
 
@@ -450,33 +451,35 @@ export default function PortfolioPage() {
       {/* Áreas de Atuação */}
       <section className="px-6 bg-white">
 
-        <section className="bg-gradient-to-b from-blue-900 to-teal-400 text-white w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col md:flex-row items-center justify-between px-8 py-10" style={{ minHeight: 270 }}>
+        <section className="bg-gradient-to-b text-white w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col items-center">
           {/* Texto */}
-          <div className="max-w-lg md:w-1/2">
-            <h2 className="text-3xl font-bold text-white font-inter mb-4">
-              Cuidando da sua saúde<br /> com excelência e <br />proximidade
-            </h2>
-            <p className="font-inter text-white">
-              Atendimento humanizado com tecnologia para<br /> sua saúde e bem-estar
+          {/* <div className="flex flex-col max-w-lg border" >
+            <p className="text-3xl font-bold text-white font-inter mb-4 text-justify!">
+              Cuidando da sua saúde com excelência e proximidade
             </p>
-          </div>
+            <p className="font-inter text-white text-justify!">
+              Atendimento humanizado com tecnologia para sua saúde e bem-estar
+            </p>
+          </div> */}
+
 
           {/* Imagem */}
-          <div className="mt-6 md:mt-0 md:w-1/2 flex justify-center">
+          <div className="mt-6 md:mt-0 flex justify-center">
             {!isMobile && (
               <Image
                 src={MedicImage}
                 alt="Imagem médica"
-                className="relative top-0 right-0 h-80 object-contain z-20"
+                className="top-0 right-0 object-contain z-20 w-full"
               />
             )}
           </div>
           {isMobile && (
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center">
               <Image
                 src={MedicImage}
                 alt="Imagem médica"
-                className="h-48 object-contain"
+                className="object-contain w-full h-auto top-0"
+                style={{ width: '800px' }}
               />
             </div>
           )}
@@ -546,7 +549,7 @@ export default function PortfolioPage() {
                       <CardContent className="p-4">
                         <div className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-gray-700">{servico}</p>
+                          <p className="text-gray-700 text-justify">{servico}</p>
                         </div>
                       </CardContent>
                     </Card>
@@ -567,7 +570,7 @@ export default function PortfolioPage() {
           </section>
           {/* Transformação Digital */}
           <section className="max-w-5xl mx-auto bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white flex flex-col items-center">
-            <p className="text-lg font-medium">
+            <p className="text-lg font-medium text-justify">
               Nossa Equipe está preparada para acolher sua necessidade com eficiência, empatia e segurança
             </p>
             <Image
@@ -996,7 +999,7 @@ export default function PortfolioPage() {
 
 
                 <div className="p-6 bg-gray-50 rounded-b-lg">
-                  <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {unidade.exames.map((exame, idx) => (
                       <li key={idx} className="flex items-start space-x-3 mb-2 text-blue-800">
                         {exame}
@@ -1005,6 +1008,18 @@ export default function PortfolioPage() {
                   </ul>
                 </div>
 
+                {unidade.parceria && (
+                  <div className="p-6 bg-gray-50 rounded-b-lg">
+                    <p className="text-blue-900">Parceria: {unidade.parceria.nome}</p>
+                    <p className="text-blue-900">Exames:</p>
+                    <br />
+                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {unidade.parceria.exames.map((exame, idx) => (
+                        <li key={idx} className="flex items-start space-x-3 mb-2 text-blue-800">{exame}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
               </Card>
             ))}
@@ -1283,14 +1298,14 @@ export default function PortfolioPage() {
       {/* Agendamentos e Contato */}
       {/* <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-green-600 text-white">
         <div className="container mx-auto text-center"> */}
-          {/* <h3 className="text-3xl font-bold mb-6">Agendamentos e Contato</h3>
+      {/* <h3 className="text-3xl font-bold mb-6">Agendamentos e Contato</h3>
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto text-justify">
             Os agendamentos podem ser realizados diretamente nas unidades de
             atendimento ou por meio dos canais institucionais do Grupo Saúde -
             Vale do Jurumirim.
           </p> */}
 
-          {/* <div className="bg-white/10 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+      {/* <div className="bg-white/10 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
             <h4 className="text-xl font-semibold mb-4 text-center">
               Contato para Agendamentos
             </h4>
@@ -1335,7 +1350,7 @@ export default function PortfolioPage() {
             </Card>
           </div> */}
 
-          {/* <p className="text-lg mb-8 text-blue-100">
+      {/* <p className="text-lg mb-8 text-blue-100">
             Nossa equipe está preparada para acolher sua necessidade com
             eficiência, empatia e segurança.
           </p>
