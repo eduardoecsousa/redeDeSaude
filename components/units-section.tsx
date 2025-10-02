@@ -30,8 +30,12 @@ import {
   espirometria2,
   imgAleatoria1,
   imgAleatoria2,
-  grupoSaude
+  grupoSaude,
+  Tomografia,
+  UltrassonConvencional,
+  Tomografia64
 } from "../pictures/importPictures"
+import Image from "next/image"
 
 const units = [
   {
@@ -42,10 +46,11 @@ const units = [
     image: "/modern-medical-clinic.png",
     exames: ['Tomografia Computadorizada 16 Canais', 'Eletrocardiograma', 'Eletroencefalograma', 'Mapa', 'Holter', 'Espirometria', 'Ultrassom Convencional', 'Doppler', 'Morfológico', 'Transvaginal', 'Mamografia Digital', 'Densitometria Óssea', 'Raio-X Digital', 'Audiometria', 'Acuidade Visual', 'Exames Complementares de Medicina do Trabalho', 'Exames Laboratorias'],
     examImages: [
-      { url: "/ultrassom.jpg", name: "Ultrassom" },
-      { url: "/raio-x.jpg", name: "Raio-X" },
-      { url: "/tomografia.jpg", name: "Tomografia" },
-      { url: "/ressonancia.jpg", name: "Ressonância" },
+      { url: ultrasonografia, name: "Ultrassom" },
+      { url: raiox, name: "Raio-X" },
+      { url: Tomografia, name: "Tomografia" },
+      { url: eletrocardiogra, name: "Eletrocar" },
+      { url: laboratorio, name: "Exames Laboratóriais" },
     ],
     parceria: { nome: "Santa Casa de Misericórdia de Itaí", exames: ['Colonoscopia', 'Endoscopia'] }
   },
@@ -57,9 +62,10 @@ const units = [
     exames: ['Raio-X', 'Tomografia Computadorizada 64 Canais', 'Eletrocardiograma', 'Eletroencefalograma', 'Mapa', 'Holter', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional', 'Ultrassom Doppler', 'Ultrassom Morfológico', 'Ultrassom Transvaginal', 'Ressonância Magnética 1,5 tesla', 'Raio-X Digital'],
     image: "/healthcare-facility-building.jpg",
     examImages: [
-      { url: "/mamografia.jpg", name: "Mamografia" },
-      { url: "/eletrocardiograma.jpg", name: "Eletrocardiograma" },
-      { url: "/laboratorio.jpg", name: "Laboratório" },
+      { url: eletroencefalograma, name: "Eletroencefalograma" },
+      { url: eletrocardiogra, name: "Eletrocardiograma" },
+      { url: holter, name: "Holter" },
+      { url: Tomografia64, name: "Tomografia Computadorizada 64 Canais" },
     ],
   },
   {
@@ -70,15 +76,15 @@ const units = [
     exames: ['Densitometria óssea', 'Eletrocardiograma', 'Eletrocefalograma', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional'],
     image: "/medical-center-entrance.jpg",
     examImages: [
-      { url: "/raio-x.jpg", name: "Raio-X" },
-      { url: "/ultrassom.jpg", name: "Ultrassom" },
-      { url: "/exames-sangue.jpg", name: "Exames de Sangue" },
-      { url: "/eletrocardiograma.jpg", name: "ECG" },
+      { url: espirometria, name: "Espirometria" },
+      { url: UltrassonConvencional, name: "Ultrassom Convencional" },
+      { url: eletrocardiogra, name: "Eletrocardiograma" },
+      { url: endoscopia, name: "Endoscopia" },
     ],
   },
 ]
 
-function ExamCarousel({ images }: { images: { url: string; name: string }[] }) {
+function ExamCarousel({ images }: { images: { url: any; name: string }[] }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const next = () => {
@@ -92,8 +98,8 @@ function ExamCarousel({ images }: { images: { url: string; name: string }[] }) {
   return (
     <div className="relative group">
       <div className="overflow-hidden rounded-lg">
-        <img
-          src={images[currentIndex].url || "/placeholder.svg"}
+        <Image
+          src={images[currentIndex].url}
           alt={images[currentIndex].name}
           className="w-full h-48 object-cover transition-transform duration-300"
         />

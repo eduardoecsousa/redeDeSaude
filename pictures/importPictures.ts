@@ -24,6 +24,9 @@ import espirometria2 from "./esperimotria2.jpg"
 import imgAleatoria1 from "./img_aleatorio.jpg"
 import imgAleatoria2 from "./img_aleatorio2.jpg"
 import grupoSaude from "./Grupo_Saude_Vale_Jurumirim_Pdf_page-0001.jpg"
+import Tomografia from "./tomografia.jpg"
+import UltrassonConvencional from "./UltrassonConvencional.png"
+import Tomografia64 from "./tomografia64.jpg"
 
 export {
   mamografia,
@@ -52,4 +55,7 @@ export {
   imgAleatoria1,
   imgAleatoria2,
   grupoSaude,
+  Tomografia,
+  UltrassonConvencional,
+  Tomografia64
 }
