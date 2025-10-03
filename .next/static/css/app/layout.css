@@ -126,6 +126,7 @@ font-weight: 100 900;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --tracking-tight: -0.025em;
+    --tracking-wide: 0.025em;
     --tracking-widest: 0.1em;
     --leading-tight: 1.25;
     --leading-relaxed: 1.625;
@@ -401,6 +402,9 @@ font-weight: 100 900;
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
+  .right-6 {
+    right: calc(var(--spacing) * 6);
+  }
   .-bottom-12 {
     bottom: calc(var(--spacing) * -12);
   }
@@ -412,6 +416,9 @@ font-weight: 100 900;
   }
   .bottom-4 {
     bottom: calc(var(--spacing) * 4);
+  }
+  .bottom-6 {
+    bottom: calc(var(--spacing) * 6);
   }
   .bottom-20 {
     bottom: calc(var(--spacing) * 20);
@@ -628,6 +635,9 @@ font-weight: 100 900;
   }
   .field-sizing-content {
     field-sizing: content;
+  }
+  .aspect-\[2\/1\] {
+    aspect-ratio: 2/1;
   }
   .aspect-square {
     aspect-ratio: 1 / 1;
@@ -877,6 +887,9 @@ font-weight: 100 900;
   }
   .w-16 {
     width: calc(var(--spacing) * 16);
+  }
+  .w-35 {
+    width: calc(var(--spacing) * 35);
   }
   .w-64 {
     width: calc(var(--spacing) * 64);
@@ -1654,6 +1667,10 @@ font-weight: 100 900;
     --tw-gradient-position: to top in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
+  .from-background {
+    --tw-gradient-from: var(--background);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
   .from-black\/50 {
     --tw-gradient-from: color-mix(in srgb, #000 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1715,6 +1732,13 @@ font-weight: 100 900;
   }
   .to-green-600 {
     --tw-gradient-to: var(--color-green-600);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-muted\/20 {
+    --tw-gradient-to: var(--muted);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-gradient-to: color-mix(in oklab, var(--muted) 20%, transparent);
+    }
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-rose-500 {
@@ -1978,6 +2002,10 @@ font-weight: 100 900;
     --tw-tracking: var(--tracking-tight);
     letter-spacing: var(--tracking-tight);
   }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
   .tracking-widest {
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
@@ -2128,6 +2156,9 @@ font-weight: 100 900;
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-white) 90%, transparent);
     }
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   .tabular-nums {
     --tw-numeric-spacing: tabular-nums;
@@ -2913,10 +2944,40 @@ font-weight: 100 900;
       border-bottom-width: 0px;
     }
   }
+  .hover\:scale-110 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 110%;
+        --tw-scale-y: 110%;
+        --tw-scale-z: 110%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:border-accent\/50 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--accent);
+        @supports (color: color-mix(in lab, red, red)) {
+          border-color: color-mix(in oklab, var(--accent) 50%, transparent);
+        }
+      }
+    }
+  }
   .hover\:border-primary {
     &:hover {
       @media (hover: hover) {
         border-color: var(--primary);
+      }
+    }
+  }
+  .hover\:border-primary\/50 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--primary);
+        @supports (color: color-mix(in lab, red, red)) {
+          border-color: color-mix(in oklab, var(--primary) 50%, transparent);
+        }
       }
     }
   }
@@ -6016,6 +6077,21 @@ font-weight: 100 900;
   initial-value: "";
   inherits: false;
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 @keyframes pulse {
   50% {
     opacity: 0.5;
@@ -6128,6 +6204,9 @@ font-weight: 100 900;
       --tw-duration: initial;
       --tw-ease: initial;
       --tw-content: "";
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
       --tw-animation-duration: initial;

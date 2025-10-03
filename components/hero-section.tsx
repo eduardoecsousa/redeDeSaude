@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Phone, MapPin } from "lucide-react"
 import cuidadoERespeito from "../pictures/CUIDADO-E-RESPEITO-COM-CADA-PACIENTE.jpg"
-import Apresentacao from "../pictures/APRESENTAÇÃO.jpg"
+import Apresentacao from "../pictures/APRESENTAÇÃO2.jpg"
 import Image from "next/image"
 
 export function HeroSection() {
@@ -17,21 +17,21 @@ export function HeroSection() {
       <div className="container relative mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="text-white space-y-6">
-            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
+            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium text-justify">
               Grupo Saúde - Vale do Jurumirim
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-justify">
               Sua saúde merece atenção de especialistas!
             </h1>
 
-            <p className="text-lg md:text-xl text-white/90">
+            <p className="text-lg md:text-xl text-white/90 text-justify">
               Atendimento eficiente e humanizado com os melhores profissionais da região
             </p>
           </div>
 
           <div className="relative">
-            <Image src={cuidadoERespeito} alt="cuidado e respeito"/>
+            <Image src={Apresentacao} alt="cuidado e respeito" className="rounded-md"/>
           </div>
         </div>
       </div>

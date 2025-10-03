@@ -4,7 +4,9 @@ import { ServicesSection } from "@/components/services-section"
 import { StatsSection } from "@/components/stats-section"
 import { WellnessSection } from "@/components/wellness-section"
 import { UnitsSection } from "@/components/units-section"
+import { PartnershipsSection } from "@/components/partnerships-section"
 import { Footer } from "@/components/footer"
+import { FloatingAppointmentButton } from "@/components/floating-appointment-button"
 
 export default function HomePage() {
   return (
@@ -16,8 +18,10 @@ export default function HomePage() {
         <StatsSection />
         <WellnessSection />
         <UnitsSection />
+        <PartnershipsSection />
       </main>
       <Footer />
+      <FloatingAppointmentButton />
     </div>
   )
 }
