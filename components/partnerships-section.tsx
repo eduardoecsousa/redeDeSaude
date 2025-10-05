@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Building2, CheckCircle2, Handshake } from "lucide-react"
+import { Building2, CheckCircle2, Clock, Handshake, MapPin, Phone } from "lucide-react"
 import Unimed from "../pictures/Unimed Avare.jpeg"
 import Funeraria from "../pictures/Funeraria dois irmãos.jpeg"
 import Image from "next/image"
@@ -8,17 +8,26 @@ export function PartnershipsSection() {
   const partnerships = [
     {
       name: "Santa Casa da Misericórdia de Avaré",
+      address:"Rua Mato Grosso, anexo à Santa Casa - Centro, Avaré/SP",
       type: "Parceria Comercial",
-      exames: ["Eletroencefalograma", "Eletrocardiograma", "Espirometria"]
+      phone:"(14) 3711-9100",
+      hours:"Seg-Sex: 7h às 18h | Sáb: 7h às 12h",
+      exames: ['Raio-X', 'Tomografia Computadorizada 64 Canais', 'Eletrocardiograma', 'Eletroencefalograma', 'Mapa', 'Holter', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional', 'Ultrassom Doppler', 'Ultrassom Morfológico', 'Ultrassom Transvaginal', 'Ressonância Magnética 1,5 tesla', 'Raio-X Digital'],
     },
     {
       name: "Hospital Unimed Avaré",
+      address:"R. Santa Catarina, 1981 - Bairro Alto, Avaré/SP",
+      phone:"(14) 3711-7000",
       type: "Parceria Comercial",
+      hours:"Seg-Sex: 7h às 18h | Sáb: 7h às 12h",
       exames: ["Densitometria óssea"]
     },
     {
       name: "Unimed Saúde Ocupacional",
       type: "Parceria Comercial",
+      address:"R. Santa Catarina, 1961 - Bairro Alto, Averé/SP",
+      phone:"(14) 3711-7000",
+      hours:"Seg-Sex: 7h às 18h | Sáb: 7h às 12h",
       exames: ["Eletroencefalograma", "Eletrocardiograma", "Espirometria"]
     },
   ]
@@ -49,7 +58,7 @@ export function PartnershipsSection() {
                 key={index}
                 className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
               >
-                <CardContent className="p-6">
+                <CardContent className="p-6 space-y-3">
                   <div className="flex flex-col items-center text-center gap-4">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                       <Building2 className="w-8 h-8 text-primary" />
@@ -57,6 +66,19 @@ export function PartnershipsSection() {
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">{partner.type}</p>
                       <h3 className="font-semibold text-lg text-balance">{partner.name}</h3>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                      <MapPin className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
+                      <span className="text-muted-foreground">{partner.address}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-muted-foreground">{partner.phone}</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                      <Clock
+                       className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
+                      <span className="text-muted-foreground">{partner.hours}</span>
                     </div>
                   </div>
                   <div className="pt-4 border-t">

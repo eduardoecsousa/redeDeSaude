@@ -57,20 +57,8 @@ export function Footer() {
             <div className="flex items-center gap-4">
               <span className="text-sm">Siga nossas redes sociais:</span>
               <div className="flex gap-3">
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
+                <a href="https://www.instagram.com/saudevaledojurumirim/" className="hover:opacity-80 transition-opacity">
                   <Instagram className="h-5 w-5" />
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <Youtube className="h-5 w-5" />
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <Twitter className="h-5 w-5" />
                 </a>
               </div>
             </div>

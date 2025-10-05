@@ -41,7 +41,7 @@ const units = [
   {
     name: "Policlínica Vale do Jurumirim LTDA",
     address: "Rua Salvador de Freitas, 1316, Térreo - Centro, Itaí/SP",
-    phone: "(84) 3421-1234",
+    phone: "(14) 3193-0025",
     hours: "Seg-Sex: 7h às 19h | Sáb: 7h às 13h",
     image: "/modern-medical-clinic.png",
     exames: ['Tomografia Computadorizada 16 Canais', 'Eletrocardiograma', 'Eletroencefalograma', 'Mapa', 'Holter', 'Espirometria', 'Ultrassom Convencional', 'Doppler', 'Morfológico', 'Transvaginal', 'Mamografia Digital', 'Densitometria Óssea', 'Raio-X Digital', 'Audiometria', 'Acuidade Visual', 'Exames Complementares de Medicina do Trabalho', 'Exames Laboratorias'],
@@ -55,23 +55,9 @@ const units = [
     parceria: { nome: "Santa Casa de Misericórdia de Itaí", exames: ['Colonoscopia', 'Endoscopia'] }
   },
   {
-    name: "Santa Casa de Misericórdia de Avaré",
-    address: "Rua Mato Grosso, anexo à Santa Casa - Centro, Avaré/SP",
-    phone: "(84) 3417-5678",
-    hours: "Seg-Sex: 7h às 18h | Sáb: 7h às 12h",
-    exames: ['Raio-X', 'Tomografia Computadorizada 64 Canais', 'Eletrocardiograma', 'Eletroencefalograma', 'Mapa', 'Holter', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional', 'Ultrassom Doppler', 'Ultrassom Morfológico', 'Ultrassom Transvaginal', 'Ressonância Magnética 1,5 tesla', 'Raio-X Digital'],
-    image: "/healthcare-facility-building.jpg",
-    examImages: [
-      { url: eletroencefalograma, name: "Eletroencefalograma" },
-      { url: eletrocardiogra, name: "Eletrocardiograma" },
-      { url: holter, name: "Holter" },
-      { url: Tomografia64, name: "Tomografia Computadorizada 64 Canais" },
-    ],
-  },
-  {
     name: "Santa Casa de Misericórdia de Taquarituba",
     address: "Rua Mal. Floriano Peixoto, 95 - Centro, Taquarituba/SP",
-    phone: "(84) 3405-9012",
+    phone: "(14) 3762-1700",
     hours: "Seg-Sex: 7h às 17h",
     exames: ['Densitometria óssea', 'Eletrocardiograma', 'Eletrocefalograma', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional'],
     image: "/medical-center-entrance.jpg",
@@ -80,6 +66,17 @@ const units = [
       { url: UltrassonConvencional, name: "Ultrassom Convencional" },
       { url: eletrocardiogra, name: "Eletrocardiograma" },
       { url: endoscopia, name: "Endoscopia" },
+    ],
+  },
+  {
+    name: "Unidade Móvel de Saúde",
+    exames: ["Audiometria", "Acuidade Visual", "Eletrocefalograma", "Eletrocardiograma", "Espirometria", "Posto de Coleta Laboratorial", "Consulta medica"],
+    image: "/healthcare-facility-building.jpg",
+    examImages: [
+      { url: audiometria, name: "Audiometria" },
+      { url: acuidadeVisual, name: "Acuidade Visual" },
+      { url: eletroencefalograma, name: "Eletrocefalograma" },
+      { url: laboratorio, name: "Coleta Laboratorial" },
     ],
   },
 ]
@@ -161,18 +158,24 @@ export function UnitsSection() {
                 <CardTitle className="text-xl">{unit.name}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="flex items-start gap-2 text-sm">
-                  <MapPin className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
-                  <span className="text-muted-foreground">{unit.address}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
+                {
+                  unit.address ? <div className="flex items-start gap-2 text-sm">
+                    <MapPin className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
+                    <span className="text-muted-foreground">{unit.address}</span>
+                  </div> : <></>
+                }
+                {
+                  unit.phone ?  <div className="flex items-center gap-2 text-sm">
                   <Phone className="h-4 w-4 text-primary flex-shrink-0" />
                   <span className="text-muted-foreground">{unit.phone}</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm">
+                </div> : <></>
+                }
+                {
+                  unit.hours ?  <div className="flex items-start gap-2 text-sm">
                   <Clock className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
                   <span className="text-muted-foreground">{unit.hours}</span>
-                </div>
+                </div> : <></>
+                }
                 <div className="pt-4 border-t">
                   <h4 className="font-semibold text-sm mb-3">Exames Disponíveis:</h4>
                   <ul className="space-y-2">
