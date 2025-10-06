@@ -9,12 +9,6 @@ const services = [
     items: ["Raio-X, Mamografia, Tomografia", "Ultrassonografia", "Ressonância Magnética", "Exames Laboratoriais"],
   },
   {
-    icon: Activity,
-    title: "Instalação de Equipamentos",
-    description: "Modernização de ambientes para diagnósticos",
-    items: ["Instalação de equipamentos", "Gestão de planta diagnóstica", "Armazenamento seguro", "Telediagnóstico"],
-  },
-  {
     icon: Heart,
     title: "Atendimento Especializado",
     description: "Equipe preparada para atender suas necessidades",

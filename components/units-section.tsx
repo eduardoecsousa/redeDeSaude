@@ -59,7 +59,7 @@ const units = [
     address: "Rua Mal. Floriano Peixoto, 95 - Centro, Taquarituba/SP",
     phone: "(14) 3762-1700",
     hours: "Seg-Sex: 7h às 17h",
-    exames: ['Densitometria óssea', 'Eletrocardiograma', 'Eletrocefalograma', 'Espirometria', 'Endoscopia', 'Colonoscopia', 'Ultrassom Convencional'],
+    exames: ['Eletrocardiograma', 'Eletrocefalograma', 'Espirometria', 'Ultrassom Convencional: Doppler, morfológico e obstétrico.', 'Tomografia computadorizada de 16 canais', 'Mapa', 'Holter'],
     image: "/medical-center-entrance.jpg",
     examImages: [
       { url: espirometria, name: "Espirometria" },
