@@ -25,7 +25,7 @@ export function PartnershipsSection() {
     {
       name: "Unimed Saúde Ocupacional",
       type: "Parceria Comercial",
-      address:"R. Santa Catarina, 1961 - Bairro Alto, Averé/SP",
+      address:"R. Santa Catarina, 1961 - Bairro Alto, Avaré/SP",
       phone:"(14) 3711-7000",
       hours:"Seg-Sex: 7h às 18h | Sáb: 7h às 12h",
       exames: ["Eletroencefalograma", "Eletrocardiograma", "Espirometria"]
